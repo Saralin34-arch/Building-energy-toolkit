@@ -1,0 +1,148 @@
+﻿<UserControl x:Class="CodeToDesign.LL97.Ll97Panel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             Background="#F5F5F3"
+             d:DesignHeight="700" d:DesignWidth="350">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <!-- Viewbox scales everything to fit the panel width -->
+        <Viewbox Stretch="Uniform" StretchDirection="DownOnly">
+            <Grid Width="350" Height="700">
+
+                <!-- Background Image -->
+                <Image Source="PanelBackground.png" 
+                       Stretch="Fill"
+                       Width="350" Height="700"/>
+
+                <!-- Overlay Canvas - coordinates based on 350x700 image -->
+                <Canvas Width="350" Height="700">
+
+                    <!-- ANALYZE START Button -->
+                    <Button x:Name="AnalyzeButton" 
+                            Canvas.Left="24" Canvas.Top="118"
+                            Width="97" Height="30"
+                            Click="AnalyzeButton_Click"
+                            Cursor="Hand"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Opacity="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+                    <!-- Building Information - Values after colons -->
+                    <TextBlock x:Name="AreaSourceText" 
+                               Canvas.Left="196" Canvas.Top="316"
+                               Text="--"
+                               FontFamily="Segoe UI" FontSize="10" 
+                               Foreground="#4A5568" RenderTransformOrigin="-14.708,-1.233" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                    <TextBlock x:Name="AreaUsedText" 
+                               Canvas.Left="196" Canvas.Top="333"
+                               Text="--"
+                               FontFamily="Segoe UI" FontSize="10" 
+                               Foreground="#4A5568" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                    <TextBlock x:Name="EuiText" 
+                               Canvas.Left="196" Canvas.Top="352"
+                               Text="--"
+                               FontFamily="Segoe UI" FontSize="10" 
+                               Foreground="#4A5568" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                    <!-- EUI Settings Button (gear icon) -->
+                    <Button x:Name="EuiSettingsButton" 
+                            Canvas.Left="175" Canvas.Top="225"
+                            Width="37" Height="29"
+                            Click="EuiSettingsButton_Click"
+                            Cursor="Hand"
+                            ToolTip="Configure EUI Settings"
+                            Background="Transparent"
+                            Foreground="Transparent"
+                            FontSize="12"
+                            Content=""
+                            BorderThickness="0" RenderTransformOrigin="-8.222,1.439" HorizontalAlignment="Center" VerticalAlignment="Top">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="4">
+                                    <ContentPresenter HorizontalAlignment="Center" 
+                                                      VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <!-- Emissions Results -->
+                    <TextBlock x:Name="CapText" 
+                               Canvas.Left="211" Canvas.Top="428"
+                               Text="--"
+                               FontFamily="Segoe UI" FontSize="10" 
+                               Foreground="#4A5568" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                    <TextBlock x:Name="EmissionsText" 
+                               Canvas.Left="211" Canvas.Top="446"
+                               Text="--"
+                               FontFamily="Segoe UI" FontSize="10" 
+                               Foreground="#4A5568" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                    <TextBlock x:Name="DifferenceText" 
+                               Canvas.Left="211" Canvas.Top="464"
+                               Text="--"
+                               FontFamily="Segoe UI" FontSize="10" 
+                               Foreground="#4A5568" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                    <!-- Fuel Type Breakdown (inside the box) -->
+                    <TextBlock x:Name="GasText" 
+                               Canvas.Left="121" Canvas.Top="369"
+                               Text=""
+                               FontFamily="Segoe UI" FontSize="10" 
+                               Foreground="#4A5568" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+                    <TextBlock x:Name="ElectricText" 
+                               Canvas.Left="121" Canvas.Top="389"
+                               Text=""
+                               FontFamily="Segoe UI" FontSize="10" 
+                               Foreground="#4A5568" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                    <!-- Potential Fine Result -->
+                    <TextBlock x:Name="FineText" 
+                               Canvas.Left="165" Canvas.Top="541"
+                               Text="--"
+                               FontFamily="Segoe UI" FontSize="12" FontWeight="SemiBold"
+                               Foreground="#2D3748" RenderTransformOrigin="-3.124,-12.799" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+                    <!-- Project Status Result -->
+                    <TextBlock x:Name="StatusText" 
+                               Canvas.Left="171" Canvas.Top="620"
+                               Text="--"
+                               FontFamily="Segoe UI" FontSize="11" FontWeight="SemiBold"
+                               Foreground="#2D3748" RenderTransformOrigin="-2.383,-12.249" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+                    <!-- Clear Data Button -->
+                    <Button x:Name="ClearButton" 
+                            Canvas.Left="228" Canvas.Top="652"
+                            Width="94" Height="22"
+                            Click="ClearButton_Click"
+                            Cursor="Hand"
+                            ToolTip="Clear all data"
+                            Background="Transparent"
+                            Foreground="Transparent"
+                            FontSize="10"
+                            Content="RESET"
+                            BorderThickness="0" RenderTransformOrigin="0.238,-0.185" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="4">
+                                    <ContentPresenter HorizontalAlignment="Center" 
+                                                      VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                </Canvas>
+            </Grid>
+        </Viewbox>
+    </ScrollViewer>
+</UserControl>

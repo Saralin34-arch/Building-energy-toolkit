@@ -1,0 +1,104 @@
+<Window x:Class="CodeToDesign.LL97.EuiSettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="EUI Settings - Building Factors" 
+        Width="400" Height="550"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F5F3"
+        ResizeMode="NoResize">
+    
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,20">
+            <TextBlock Text="Configure EUI Factors" 
+                       FontSize="18" FontWeight="Bold" 
+                       Foreground="#365974"/>
+            <TextBlock Text="Select options to calculate accurate EUI for your building" 
+                       FontSize="11" Foreground="#6B7280" Margin="0,4,0,0"/>
+        </StackPanel>
+        
+        <!-- Settings Form -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                
+                <!-- Building Type -->
+                <TextBlock Text="Building Type" FontWeight="SemiBold" Foreground="#365974" Margin="0,0,0,4"/>
+                <ComboBox x:Name="BuildingTypeCombo" Margin="0,0,0,12"/>
+                
+                <!-- Building Age -->
+                <TextBlock Text="Building Age" FontWeight="SemiBold" Foreground="#365974" Margin="0,0,0,4"/>
+                <ComboBox x:Name="BuildingAgeCombo" Margin="0,0,0,12"/>
+                
+                <!-- Operating Hours -->
+                <TextBlock Text="Operating Hours" FontWeight="SemiBold" Foreground="#365974" Margin="0,0,0,4"/>
+                <ComboBox x:Name="OperatingHoursCombo" Margin="0,0,0,12"/>
+                
+                <!-- Occupancy -->
+                <TextBlock Text="Occupancy Density" FontWeight="SemiBold" Foreground="#365974" Margin="0,0,0,4"/>
+                <ComboBox x:Name="OccupancyCombo" Margin="0,0,0,12"/>
+                
+                <!-- HVAC Efficiency -->
+                <TextBlock Text="HVAC System Efficiency" FontWeight="SemiBold" Foreground="#365974" Margin="0,0,0,4"/>
+                <ComboBox x:Name="HvacCombo" Margin="0,0,0,12"/>
+                
+                <!-- Window Quality -->
+                <TextBlock Text="Window Quality" FontWeight="SemiBold" Foreground="#365974" Margin="0,0,0,4"/>
+                <ComboBox x:Name="WindowCombo" Margin="0,0,0,12"/>
+                
+                <!-- Insulation Quality -->
+                <TextBlock Text="Insulation Quality" FontWeight="SemiBold" Foreground="#365974" Margin="0,0,0,4"/>
+                <ComboBox x:Name="InsulationCombo" Margin="0,0,0,12"/>
+                
+                <!-- Fuel Type Section -->
+                <Border Background="#FEF3C7" CornerRadius="4" Padding="12" Margin="0,8,0,12">
+                    <StackPanel>
+                        <TextBlock Text="⚡ Primary Fuel Type" FontWeight="SemiBold" Foreground="#92400E" Margin="0,0,0,8"/>
+                        <ComboBox x:Name="FuelTypeCombo"/>
+                        <TextBlock Text="Affects CO₂ emission factor calculation" 
+                                   FontSize="9" Foreground="#92400E" Margin="0,4,0,0"/>
+                    </StackPanel>
+                </Border>
+                
+            </StackPanel>
+        </ScrollViewer>
+        
+        <!-- Calculated EUI Display -->
+        <Border Grid.Row="2" Background="#E8F4FD" CornerRadius="8" Padding="16" Margin="0,12,0,12">
+            <StackPanel>
+                <TextBlock Text="Calculated EUI" FontWeight="SemiBold" Foreground="#365974"/>
+                <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                    <TextBlock x:Name="CalculatedEuiText" 
+                               Text="--" 
+                               FontSize="28" FontWeight="Bold" 
+                               Foreground="#365974"/>
+                    <TextBlock Text=" kBtu/ft²/yr" 
+                               FontSize="14" 
+                               Foreground="#6B7280" 
+                               VerticalAlignment="Bottom" Margin="4,0,0,4"/>
+                </StackPanel>
+                <TextBlock x:Name="BaseEuiText" 
+                           Text="Base EUI: -- | Adjustments applied" 
+                           FontSize="10" Foreground="#6B7280" Margin="0,4,0,0"/>
+            </StackPanel>
+        </Border>
+        
+        <!-- Buttons -->
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="CancelButton" Content="Cancel" 
+                    Width="80" Height="32" Margin="0,0,8,0"
+                    Click="CancelButton_Click"/>
+            <Button x:Name="ApplyButton" Content="Apply" 
+                    Width="80" Height="32"
+                    Background="#365974" Foreground="White"
+                    Click="ApplyButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
+

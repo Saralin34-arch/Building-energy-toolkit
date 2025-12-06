@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <!-- Application that registers the dockable pane on Revit startup -->
+  <AddIn Type="Application">
+    <Name>LL97 Assistant</Name>
+    <Assembly>CodeToDesign.LL97.dll</Assembly>
+    <FullClassName>CodeToDesign.LL97.App</FullClassName>
+    <AddInId>6F417B68-0F9C-4C7A-8A2D-4D36B6C8A9C3</AddInId>
+    <VendorId>CodeToDesign</VendorId>
+    <VendorDescription>LL97 Compliance Tool</VendorDescription>
+  </AddIn>
+
+  <!-- Command that can be triggered from ribbon/button -->
+  <AddIn Type="Command">
+    <Name>LL97 Analyze</Name>
+    <Assembly>CodeToDesign.LL97.dll</Assembly>
+    <FullClassName>CodeToDesign.LL97.HelloCommand</FullClassName>
+    <AddInId>A1B2C3D4-E5F6-7890-ABCD-EF1234567890</AddInId>
+    <VendorId>CodeToDesign</VendorId>
+    <VendorDescription>Analyze LL97 Compliance</VendorDescription>
+  </AddIn>
+</RevitAddIns>
+
